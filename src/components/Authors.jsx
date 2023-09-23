@@ -1,10 +1,8 @@
-const Authors = (props) => {
-  // eslint-disable-next-line react/prop-types
-  if (!props.show) {
+// eslint-disable-next-line react/prop-types
+const Authors = ({authors, show}) => {
+  if (show) {
     return null
   }
-  const authors = []
-
   return (
     <div>
       <h2>authors</h2>
@@ -15,10 +13,11 @@ const Authors = (props) => {
             <th>born</th>
             <th>books</th>
           </tr>
+          {/* eslint-disable-next-line react/prop-types */}
           {authors.map((a) => (
             <tr key={a.name}>
               <td>{a.name}</td>
-              <td>{a.born}</td>
+              {/* <td>{a.born}</td> */}
               <td>{a.bookCount}</td>
             </tr>
           ))}
