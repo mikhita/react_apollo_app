@@ -1,11 +1,8 @@
-const Books = (props) => {
   // eslint-disable-next-line react/prop-types
-  if (!props.show) {
+const Books = ({books, show}) => {
+  if (show) {
     return null
   }
-
-  const books = []
-
   return (
     <div>
       <h2>books</h2>
@@ -17,6 +14,7 @@ const Books = (props) => {
             <th>author</th>
             <th>published</th>
           </tr>
+          {/* eslint-disable-next-line react/prop-types */}
           {books.map((a) => (
             <tr key={a.title}>
               <td>{a.title}</td>
@@ -31,3 +29,5 @@ const Books = (props) => {
 }
 
 export default Books
+
+  

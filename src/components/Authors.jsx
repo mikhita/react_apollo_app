@@ -17,7 +17,7 @@ const Authors = ({authors, show}) => {
           {authors.map((a) => (
             <tr key={a.name}>
               <td>{a.name}</td>
-              {/* <td>{a.born}</td> */}
+              <td>{a.born}</td>
               <td>{a.bookCount}</td>
             </tr>
           ))}
