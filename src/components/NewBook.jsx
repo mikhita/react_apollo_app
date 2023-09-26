@@ -22,13 +22,21 @@ const NewBook = ({ show }) => {
   const submit = async (event) => {
     event.preventDefault()
 
-    createBook({  variables: { title, author, published, genre } })
-
+    createBook({
+      variables: {
+        title,
+        author,
+        published,
+        genres,
+      },
+    })
+    
     setTitle('')
     setPublished('')
     setAuthor('')
     setGenres([])
     setGenre('')
+    
   }
 
   const addGenre = () => {
