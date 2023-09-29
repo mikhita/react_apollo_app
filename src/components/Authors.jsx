@@ -1,7 +1,20 @@
+import { useQuery } from "@apollo/client"
+import { ALL_AUTHORS } from "../queries"
+import SetBirthYear from "./SetBirthYear"
+
 // eslint-disable-next-line react/prop-types
 const Authors = ({authors, show}) => {
+  const result = useQuery(ALL_AUTHORS, {
+    pollInterval: 2000
+  })
+
+  // eslint-disable-next-line react/prop-types
   if (show) {
     return null
+  }
+
+  if (result.loading) {
+    return <div>loading...</div>
   }
   return (
     <div>
@@ -23,6 +36,8 @@ const Authors = ({authors, show}) => {
           ))}
         </tbody>
       </table>
+      {/* eslint-disable-next-line react/prop-types */}
+      <SetBirthYear/>
     </div>
   )
 }
